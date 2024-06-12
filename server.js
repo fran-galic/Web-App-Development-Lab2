@@ -33,11 +33,11 @@ app.use(bodyParser.text());
 
 //improtmao rtuere iz routes direktorija na ansu express aplikaicju
 var homeRouter = require('./routes/home.routes');
-//var cartRouter = require('./routes/cart.routes'); 
+var cartRouter = require('./routes/cart.routes'); 
 
 //spajamo rutere na express aplikaciju i smao defirnirmao da koji god zahtjev zapocinje sa /home ili /cart da ce se prolsjediit na odgovarjuci ruter
 app.use('/home', homeRouter);
-//app.use('/cart', cartRouter);
+app.use('/cart', cartRouter);
 
 //presumjerava get zahrjev za obicnu putanju na putnaju /home/getCategories
 app.get('/', function(req, res){

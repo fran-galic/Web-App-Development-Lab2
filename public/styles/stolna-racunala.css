@@ -664,7 +664,7 @@ ul.about {
     position: absolute;
     top: 70px;
     left: 70px;
-    background-color:bisque;
+    background-color:#fce696;
     color: white;
     padding: 1%;
     border-radius: 15px;
@@ -672,7 +672,7 @@ ul.about {
 }
 
 .add_prod:hover{
-    background-color: bisque;
+    background-color:#fce696;
     color: white;
     padding: 1%;
     border-radius: 15px;
@@ -684,4 +684,16 @@ ul.about {
     height: auto;
 }
 
+.spremnik-brtojilo-cart {
+    position: relative;
+}
 
+.brojac {
+    background-color:#fce696;
+    padding: 0.5rem;
+    border-radius: 5px;
+    text-align: center;
+    position: absolute;
+    bottom: -10px;
+    right: -10px;
+}

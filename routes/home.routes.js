@@ -54,4 +54,21 @@ router.get('/getProducts/:id', function(req, res, next){
         state: 1});
 });
 
+router.post('/getProducts/:Cid/:id', function(req, res, next){
+    var cart = req.session.cart;
+    var products = getProducts(req.params.Cid);
+    if(!cart){
+        cart = req.session.cart = [];
+        cart.push({ id: req.params.id, name: getName(req.params.id, products), col: 1});
+    }else{
+        let search = cart.find((p) => p.id === req.params.id);
+        if (search === undefined) {
+            cart.push({ id: req.params.id, name: getName(req.params.id, products), col: 1});
+        } else {
+            search.col += 1;
+        }
+    }
+    res.redirect('/home/getProducts/'+ req.params.Cid);
+});
+
 module.exports = router;
