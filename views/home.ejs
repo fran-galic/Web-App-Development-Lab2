@@ -27,48 +27,24 @@
                 </div>
             </div>
             <div class="sadrzaj-specificne-kategorije">
-                <div class="ime-trenutne-kategorije">Treunutna kategorija: Apstraktne strateške igre</div>
-                <div class="sprmenik-proizvoda-kategorije">
-                    <div class="proizvod-slika-opis 1">
-                        <div class="spremnik-brojilo-proizvod">
-                            <img class="proizvod-slika" id="s1" src="/images/kategorija1/k1_1.webp" alt="za sada nista" width="400" height="auto">
-                            <img class="cart cart-proizvod" src="/images/shopping-cart.png" alt="shoping cart" height="100" width="auto">
-                            <div class="brojilo brojilo-proizvod">0</div>
+                <% if(state == 0) { %>
+                <div class="nema-nista">Izaberite neku kategoriju!</div>
+                <% } else { %>
+                <div class="ime-trenutne-kategorije">Trenutna kategorija: <%= Cname %></div>
+                <div class="skup-proizvoda">
+                    <% products.forEach(p => { %>
+                    <div id="product">
+                        <div id="static">
+                            <img class="proizvod-slika" src="<%= p.image %>"" alt="">
+                            <p id="product_name"><%= p.name %></p>
                         </div>
-                        <div class="proizvod-opis">AZUL - MASTER CHOCOLATIER</div>
+                        <form class="proizvod-kart" method="post" action="/home/getProducts/<%= Cid %>/<%= p.id %>">
+                            <button type="submit" class="add_prod">
+                                <img class="slika-proizvod" src="/images/shopping-cart.png" alt="shoping cart" height="100" width="auto">
+                            </button>
+                        </form>
                     </div>
-                    <div class="proizvod-slika-opis 2">
-                        <div class="spremnik-brojilo-proizvod"> 
-                            <img class="proizvod-slika" id="s2" src="/images/kategorija1/k1_2.webp" alt="za sada nista" width="400" height="auto">
-                            <img class="cart cart-proizvod" src="/images/shopping-cart.png" alt="shoping cart" height="100" width="auto">
-                            <div class="brojilo brojilo-proizvod">0</div>
-                        </div>
-                        <div class="proizvod-opis">PATCHWORK - VALENTINE'S DAY EDITION</div>
-                    </div>
-                    <div class="proizvod-slika-opis 3">
-                        <div class="spremnik-brojilo-proizvod"> 
-                            <img class="proizvod-slika" id="s3" src="/images/kategorija1/k1_3.webp" alt="za sada nista" width="400" height="auto">
-                            <img class="cart cart-proizvod" src="/images/shopping-cart.png" alt="shoping cart" height="100" width="auto">
-                            <div class="brojilo brojilo-proizvod">0</div>
-                        </div>
-                        <div class="proizvod-opis">YINSH</div>
-                    </div>
-                    <div class="proizvod-slika-opis 4">
-                        <div class="spremnik-brojilo-proizvod">
-                            <img class="proizvod-slika"  id="s4" id="s1" src="/images/kategorija1/k1_4.webp" alt="za sada nista" width="400" height="auto">
-                            <img class="cart cart-proizvod" src="/images/shopping-cart.png" alt="shoping cart" height="100" width="auto">
-                            <div class="brojilo brojilo-proizvod">0</div>
-                        </div>
-                        <div class="proizvod-opis">WAR CHEST</div>
-                    </div>
-                    <div class="proizvod-slika-opis 5">
-                        <div class="spremnik-brojilo-proizvod">
-                            <img class="proizvod-slika" id="s5" src="/images/kategorija1/k1_5.webp" alt="za sada nista" width="400" height="auto">
-                            <img class="cart cart-proizvod" src="/images/shopping-cart.png" alt="shoping cart" height="100" width="auto">
-                            <div class="brojilo brojilo-proizvod">0</div>
-                        </div>
-                        <div class="proizvod-opis">HAVALANDI</div>
-                    </div>
+                    <% })} %>
                 </div>
             </div>
         </div>

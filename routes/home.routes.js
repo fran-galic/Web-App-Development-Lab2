@@ -17,12 +17,22 @@ function odrediKolicinu(req){
    return quantity;
 }
 
+function getProducts(id){
+    var catg = data.categories;
+    for(var i = 0; i < catg.length; i++){
+        if(catg[i].id == id){
+            return catg[i].products;
+        }
+    }
+}
 
-
-
-
-
-
+function getName(id, products){
+    for(var i = 0; i < products.length; i++){
+        if(products[i].id == id){
+            return products[i].name;
+        }
+    }
+}
 
 router.get('/getCategories', function(req, res){
    res.render('home', 
@@ -32,10 +42,16 @@ router.get('/getCategories', function(req, res){
        state: 0});
 });
 
-
-
-
-
-
+router.get('/getProducts/:id', function(req, res, next){
+    var products = getProducts(req.params.id);
+    res.render('home', 
+        {title: 'Citadel', 
+        catg: data.categories,
+        Cid: req.params.id,
+        products: products,
+        Cname: data.categories.find(c => c.id === req.params.id).name,
+        cart_col: odrediKolicinu(req),
+        state: 1});
+});
 
 module.exports = router;

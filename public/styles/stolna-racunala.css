@@ -571,3 +571,110 @@ ul.about {
     display: flex;
     flex-flow: column wrap;
 }
+
+/* css za kategorije i prikaz proizvoda */
+
+
+
+.nema-nista {
+    font-size: 4rem;
+    font-weight: 600;
+}
+
+.izbor-kategorije {
+    align-self: baseline;
+}
+
+
+
+.skup-proizvoda {
+    display: flex;
+    flex-flow: row wrap; /* Ovo omogućava elementima da pređu u novi red */
+    row-gap: 3rem;       /* Razmak između redova */
+    column-gap: 2rem;    /* Razmak između kolona, ovde je dodata jedinica 'rem' */
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+}
+
+/*
+#product {
+    position: relative;
+    max-width: 250px;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.proizvod-kart {
+    position: absolute;
+    top: 25%;
+    left: 25%;
+}
+*/
+
+/*Products*/
+#products{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 4%;
+    width: 100%;
+    margin-left: 2%;
+    padding: 1%;
+}
+
+#product{
+    text-align: center;
+}
+
+#product #static{
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    border: 2px solid;
+    width: 210px;
+}
+
+#static img{
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+}
+
+#product:hover #static{
+    transform: translateY(-3px);
+    filter: grayscale(75%);
+    transition: 0.3s ease-in-out;
+}
+
+#product:hover .add_prod{
+    opacity: 1;
+}
+
+.col{
+    color: white;
+    border-radius: 50px;
+    background-color: rgb(11, 36, 104);
+}
+
+.add_prod{
+    cursor: pointer;
+    opacity: 0;
+    margin: 0;
+    position: absolute;
+    transform: translate(-20px, -145px);
+    background-color: rgb(11, 36, 104);
+    color: white;
+    padding: 1%;
+    border-radius: 30px;
+    width: fit-content;
+}
+
+.add_prod:hover{
+    background-color: rgb(11, 36, 104);
+    color: white;
+    padding: 1%;
+    border-radius: 30px;
+    width: fit-content;
+}
+
+
