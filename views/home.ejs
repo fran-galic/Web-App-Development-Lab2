@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Početna stranica - Citadel prodavaonica društvenih igara</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="/images/castle.png">
+            <!-- linkam stilove za stolna racunala, tj desktop computers-->
+        <link href="/styles/stolna-racunala.css" rel="stylesheet" >
+            <!-- linkam stilove za prijenosna racunala, ukoliko je velcina ekrana manja ili jednaka 1023, tj ako je < 1024px -->
+        <link href="/styles/prijenosna-racunala.css" rel="stylesheet" media="screen and (max-width: 1023px)">
+    </head>
+    <body>
+        <%- include(`partials/header1`); %>   
+
+        <!-- div predstvalja 3. dio sranice -->
+        <div class="treci-dio-stranice">
+            <div class="izbor-kategorije">
+                <span>Društvene igre</span>
+                <div class="sve-kategorije">
+                <% catg.forEach(c => {  %>
+                    <form class="forma" method="GET" action="/home/getProducts/<%= c.id %>">
+                        <button type="submit" class="catg"><%= c.name %></button>
+                    </form>
+                <% }) %>
+                </div>
+            </div>
+            <div class="sadrzaj-specificne-kategorije">
+                <% if(state == 0) { %>
+                <div class="nema-nista">Izaberite neku kategoriju!</div>
+                <% } else { %>
+                <div class="ime-trenutne-kategorije">Trenutna kategorija: <%= Cname %></div>
+                <div class="skup-proizvoda">
+                    <% products.forEach(p => { %>
+                    <div id="product">
+                        <div id="static">
+                            <img class="proizvod-slika" src="<%= p.image %>"" alt="">
+                            <p id="product_name"><%= p.name %></p>
+                        </div>
+                        <form class="proizvod-kart" method="post" action="/home/getProducts/<%= Cid %>/<%= p.id %>">
+                            <button type="submit" class="add_prod">
+                                <img class="slika-proizvod" src="/images/shopping-cart.png" alt="shoping cart" height="100" width="auto">
+                            </button>
+                        </form>
+                    </div>
+                    <% })} %>
+                </div>
+            </div>
+        </div>
+
+        <%- include(`partials/footer`); %>   
+    </body>
+</html>

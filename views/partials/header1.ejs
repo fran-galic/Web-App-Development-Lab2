@@ -1,0 +1,27 @@
+   <!-- div predstavlja zaglavlje tj header stranice -->
+   <div class="header">
+   <div class="logotip">
+         <img class="logo-slika" src="/images/dice-d20.png" alt="Citadel logotip" height="100" width="auto">
+         <span class="ime-kompanije">Citadel</span>
+   </div>
+   <ul class="about">
+         <li><a class="about-anchor" href="https://youtu.be/dQw4w9WgXcQ?si=mPfqPxpPAqxNqlCm" target="_blank" 
+            rel="noopener noreferrer">Kontakt</a></li>
+         <li><a class="about-anchor" href="https://youtu.be/Kob0G2hE8IY?si=HtPBXGjfCKDNZXag" target="_blank" 
+            rel="noopener noreferrer">Newsletter</a></li>
+         <li><a class="about-anchor" href="https://youtu.be/G1IbRujko-A?si=NDkPlYJ3LZKl6ZNX" target="_blank" 
+            rel="noopener noreferrer">Pretplati se!</a></li>
+   </ul>
+   <div class="cart-and-search">
+         <div class="spremnik-brtojilo-cart">
+            <a href="/cart/getAll"><img class="cart" src="/images/shopping-cart.png" alt="shoping cart" height="100" width="auto"></a>
+            <div class="brojac"><% if(cart_col){ %> <%=cart_col %> <% } %></div>
+         </div>
+         <div><img class="search" src="/images/search.png" alt="search bar" height="100" width="auto"></div>
+   </div>
+</div>
+
+<!-- div predstavlja 2. dio stranice -->
+<div class="drugi-dio-stranice">
+   <span>Where every roll tells a story</span>
+</div>
