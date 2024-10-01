@@ -593,8 +593,8 @@ ul.about {
     row-gap: 3rem;       /* Razmak između redova */
     column-gap: 2rem;    /* Razmak između kolona, ovde je dodata jedinica 'rem' */
     justify-content: space-between;
-    align-content: center;
-    align-items: center;
+    align-content: flex-start;
+    align-items: flex-start;
 }
 
 /*
@@ -632,7 +632,6 @@ ul.about {
     display: flex;
     flex-direction: column;
     border-radius: 10px;
-    border: 2px solid;
     width: 210px;
 }
 
@@ -643,7 +642,6 @@ ul.about {
 
 #product:hover #static{
     transform: translateY(-3px);
-    filter: grayscale(75%);
     transition: 0.3s ease-in-out;
 }
 
@@ -696,4 +694,58 @@ ul.about {
     position: absolute;
     bottom: -10px;
     right: -10px;
+}
+
+#cart_prod {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    flex: 1 0 auto;
+}
+
+#name_products, #cart_quantity {
+    font-size: 3rem;
+    font-weight: 600;
+}
+
+#left_cart, #right_cart {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    row-gap: 2rem;
+}
+
+#cart_names, #cart_col {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    flex: 1 0 0;
+}
+
+#buttons {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    align-items: center;
+    align-content: center;
+}
+
+.gumb {
+    width: 3rem;
+    height: 3rem;
+    background-color: #00755e;
+    font-size: 2rem;
+    font-weight: 600;
+    border-radius: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    border: solid #1f2937 2px;
+}
+
+.gumb:hover {
+    transform: scale(1.2);
 }
