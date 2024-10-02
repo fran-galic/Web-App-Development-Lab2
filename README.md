@@ -1,5 +1,7 @@
 # Web App Development - Lab 2
 
+🌐 **Check out the live version of the project here**: [View Web App Development Lab 2](https://web-app-development-lab2.onrender.com)
+
 ## Course Overview
 
 The **Web App Development** course covers both client-side and server-side development, emphasizing web architectures, communication protocols, and building dynamic web applications. The course consists of two major lab assignments:
